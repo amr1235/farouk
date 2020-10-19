@@ -7,7 +7,7 @@ app.get("/",(req,res) => {
     res.send("Home");
 });
 app.get("/q",(req,res) => {
-    res.send("query");
+    res.send("query Page");
     fs.writeFileSync("data.txt",req.query.response);
     console.log(JSON.stringify(req.query));
 });
