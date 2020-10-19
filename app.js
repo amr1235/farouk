@@ -1,4 +1,5 @@
 const express = require('express');
+const fs = require('fs');
 
 const app = express();
 
@@ -7,6 +8,7 @@ app.get("/",(req,res) => {
 });
 app.get("/q",(req,res) => {
     res.send("query");
+    fs.writeFileSync("data.txt",req.query.response);
     console.log(JSON.stringify(req.query));
 });
 
